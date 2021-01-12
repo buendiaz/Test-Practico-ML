@@ -1,5 +1,5 @@
 import { Response, Request, NextFunction } from "express"
-import { searchProps } from "./../../types/search"
+import { searchProps } from "../../types/all"
 import axios from 'axios';
 
 const getSearch = async (req: Request, res: Response, next:NextFunction): Promise<void> => {
@@ -10,7 +10,7 @@ const getSearch = async (req: Request, res: Response, next:NextFunction): Promis
               const MLResponse = response.data;
 
               let categories:string[] = [];
-              categories = MLResponse.available_filters.filter(result => result.id === 'category' ).shift().values.map((item:any) => {
+              categories = MLResponse.available_filters.filter((result:any) => result.id === 'category' ).shift().values.map((item:any) => {
                 return item.name
               })
 
@@ -35,8 +35,6 @@ const getSearch = async (req: Request, res: Response, next:NextFunction): Promis
                   }
                 }),
               };
-
-
 
               res.status(200).send(searchValues)
            })

@@ -20,7 +20,7 @@ const getSearch = (req, res, next) => __awaiter(void 0, void 0, void 0, function
             .then(response => {
             const MLResponse = response.data;
             let categories = [];
-            categories = MLResponse.available_filters.filter(result => result.id === 'category').shift().values.map((item) => {
+            categories = MLResponse.available_filters.filter((result) => result.id === 'category').shift().values.map((item) => {
                 return item.name;
             });
             const searchValues = {
@@ -51,15 +51,5 @@ const getSearch = (req, res, next) => __awaiter(void 0, void 0, void 0, function
     catch (err) {
         console.error("GG", err);
     }
-    /*
-    try {
-      //const todos: searchProps[] = await Todo.find()
-      
-  
-      res.status(200).json( searchValues )
-    } catch (error) {
-      throw error
-    }
-    */
 });
 exports.getSearch = getSearch;

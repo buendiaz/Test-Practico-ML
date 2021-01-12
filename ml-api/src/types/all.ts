@@ -23,3 +23,19 @@ export interface searchProps {
   categories: string[],
   items: itemsProps[],
 }
+
+interface itemDetailProps {
+  id: string,
+  title: string,
+  price: priceProps,
+  picture: string,
+  condition: string,
+  free_shipping: boolean,
+  sold_quantity: number,
+  description: string,
+}
+
+export interface itemProps {
+  author: authorProps,
+  item: itemDetailProps,
+}
