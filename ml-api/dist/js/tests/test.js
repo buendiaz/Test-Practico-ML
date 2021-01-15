@@ -32,21 +32,12 @@ describe("Products", () => {
                 done();
             });
         });
-        // Test to get an error when ID is not official but endpoint exist
+        // Test to get an error when ID is written with error but endpoint exist
         it("should not get a single item record", (done) => {
             chai_1.default.request(app_1.default)
                 .get(`/api/items/MLA8673007sss02`)
                 .end((err, res) => {
                 res.should.have.status(404);
-                done();
-            });
-        });
-        // Test to get an error when ID is not present in url
-        it("should not get a single item record", (done) => {
-            chai_1.default.request(app_1.default)
-                .get(`/api/items/ `)
-                .end((err, res) => {
-                res.should.have.status(500);
                 done();
             });
         });

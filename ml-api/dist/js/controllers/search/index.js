@@ -20,7 +20,10 @@ const getSearch = (req, res, next) => __awaiter(void 0, void 0, void 0, function
             .then(response => {
             const MLResponse = response.data;
             let categories = [];
-            categories = MLResponse.available_filters.filter((result) => result.id === 'category').shift().values.map((item) => {
+            categories = MLResponse.available_filters
+                .filter((result) => result.id === 'category').shift()
+                .values.sort((a, b) => a.results > b.results ? -1 : 1)
+                .map((item) => {
                 return item.name;
             });
             const searchValues = {

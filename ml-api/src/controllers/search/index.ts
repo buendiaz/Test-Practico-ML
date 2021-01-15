@@ -10,7 +10,10 @@ const getSearch = async (req: Request, res: Response, next:NextFunction): Promis
               const MLResponse = response.data;
 
               let categories:string[] = [];
-              categories = MLResponse.available_filters.filter((result:any) => result.id === 'category' ).shift().values.map((item:any) => {
+              categories = MLResponse.available_filters
+                              .filter((result:any) => result.id === 'category' ).shift()
+                              .values.sort((a:any, b:any) => a.results > b.results ? -1 : 1)
+                              .map((item:any) => {
                 return item.name
               })
 

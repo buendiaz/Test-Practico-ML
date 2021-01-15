@@ -18,9 +18,13 @@ const getItemData = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     if (req.params.id.trim() && req.params.id !== ' ') {
         let auxId = req.params.id;
         try {
-            axios_1.default.get(`https://api.mercadolibre.com/items/${auxId}`)
-                .then(response => {
+            axios_1.default.all([
+                axios_1.default.get(`https://api.mercadolibre.com/items/${auxId}`),
+                axios_1.default.get(`https://api.mercadolibre.com/items/${auxId}/description`),
+            ])
+                .then(axios_1.default.spread((response, responseDesc) => {
                 const MLResponse = response.data;
+                const MLResponseDescription = responseDesc.data;
                 // Si encuentra "id", existen los valores
                 if (MLResponse.id) {
                     let searchValues = {
@@ -50,23 +54,15 @@ const getItemData = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
                     else {
                         searchValues.item.picture = MLResponse.thumbnail;
                     }
-                    // Set description
-                    axios_1.default.get(`https://api.mercadolibre.com/items/${auxId}/description`)
-                        .then(response => {
-                        const MLResponseDescription = response.data;
-                        if (MLResponseDescription.plain_text) {
-                            searchValues.item.description = MLResponseDescription.plain_text;
-                        }
-                        res.status(200).send(searchValues);
-                    }).catch(err => {
-                        // Envia data sin description
-                        res.status(200).send(searchValues);
-                    });
+                    if (MLResponseDescription.plain_text) {
+                        searchValues.item.description = MLResponseDescription.plain_text;
+                    }
+                    res.status(200).send(searchValues);
                 }
                 else {
                     res.status(404).send('Algo ha fallado al recibir los valores del item');
                 }
-            })
+            }))
                 .catch(err => res.status(404).send(err));
         }
         catch (err) {
