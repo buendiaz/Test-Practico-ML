@@ -60,12 +60,12 @@ const getItemData = async (req: Request, res: Response, next:NextFunction): Prom
             
             
           } else {
-            res.status(500).send('Algo ha fallado al recibir los valores del item');
+            res.status(404).send('Algo ha fallado al recibir los valores del item');
           }
 
           
         })
-        .catch(err => res.send(err));
+        .catch(err => res.status(404).send(err));
       }
       catch(err){
           console.error("GG", err);

@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 4001;
 app.use(cors_1.default());
 app.use(routes_1.default);
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+exports.default = app;
 /*
 mongoose
   .connect(uri, options)
