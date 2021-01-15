@@ -1,3 +1,5 @@
+import { HTMLAttributes } from "react";
+
 interface searchQueryProps {
   query: string,
 }
@@ -37,3 +39,11 @@ export type ApiDataType = {
   //todos: ITodo[]
   //todo?: ITodo
 }
+
+export interface appInitProps {
+  children: React.ReactChild;
+}
+
+export interface inputProps extends HTMLAttributes<HTMLInputElement>  {}
+
+export interface buttonProps extends HTMLAttributes<HTMLButtonElement>  {}

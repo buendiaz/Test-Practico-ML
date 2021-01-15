@@ -1,0 +1,28 @@
+// File: _searchbar.scss
+
+.searchBar {
+  width: 100%;
+  display: flex;
+
+  .searchBarInput {
+    border-right: solid 1px #eaeaea;
+    height: 40px;
+    padding: 6px 15px;
+    flex-grow: 1;
+  }
+
+  .searchBarButton {
+    width: 40px;
+    height: 40px;
+    padding: 9px 0 0 7px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      fill: #aaa;
+      margin: 0 auto;
+    }
+  }
+
+}

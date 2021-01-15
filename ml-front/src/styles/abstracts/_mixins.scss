@@ -1,0 +1,67 @@
+// File: _mixins.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+@mixin opacity ( $value ){
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$value*100+")";
+  filter: alpha(opacity=$value);
+  -moz-opacity: $value;
+  -khtml-opacity: $value;
+  opacity: $value;
+}
+
+@mixin border-radius( $value ){
+  -webkit-border-radius: $value !important;
+  -moz-border-radius: $value !important;
+  border-radius: $value !important;
+}
+
+@mixin border-radius-custom( $value_a, $value_b, $value_c, $value_d ){
+  -webkit-border-top-left-radius: $value_a;
+  -moz-border-top-left-radius: $value_a;
+  border-top-left-radius: $value_a;
+  -webkit-border-top-right-radius: $value_b;
+  -moz-border-top-right-radius: $value_b;
+  border-top-right-radius: $value_b;
+  -webkit-border-bottom-right-radius: $value_c;
+  -moz-border-bottom-right-radius: $value_c;
+  border-bottom-right-radius: $value_c;
+  -webkit-border-bottom-left-radius: $value_d;
+  -moz-border-bottom-left-radius: $value_d;
+  border-bottom-left-radius: $value_d;
+}
+
+@mixin transition( $time ){
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition:    all $time ease-in-out;
+  -o-transition:      all $time ease-in-out;
+  transition:         all $time ease-in-out;
+}
+
+@mixin shadow( $horizontal, $vertical, $blur, $spread, $color ){
+  -moz-box-shadow:    $horizontal $vertical $blur $spread $color;
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+  box-shadow:         $horizontal $vertical $blur $spread $color;
+}
+
+@mixin box-shadow( $horizontal, $vertical, $blur, $spread, $color ){
+  -moz-box-shadow:    inset $horizontal $vertical $blur $spread $color;
+  -webkit-box-shadow: inset $horizontal $vertical $blur $spread $color;
+  box-shadow:         inset $horizontal $vertical $blur $spread $color;
+}
+
+@mixin noshadow(){
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;}
+
+
+@mixin translate($x, $y){
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}

@@ -1,0 +1,11 @@
+// File: _ml-challenge.scss
+
+body, html {
+  background: $background;
+}
+
+header {
+  &.header {
+    background: $primary_yellow;
+  }
+}
