@@ -4,6 +4,9 @@ Postulación de Maximiliano Díaz
 ## Requisitos
 El único requisito es tener Nodejs instalado y ejecutar la siguiente secuencia de comandos según se requiera
 
+```
+yarn run storybook
+```
 
 
 
