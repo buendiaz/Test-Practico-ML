@@ -1,0 +1,21 @@
+{
+  "name": "Mercado Libre Challenge",
+  "author": "Max Díaz",
+  "license": "ISC",
+  "version": "1.0.0",
+  "scripts": {
+    "api-dev": "cd ml-api && concurrently \"tsc -w\" \"nodemon dist/js/app.js\"",
+    "front-dev": "cd ml-front && npm start",
+    "api-test": "cd ml-api && npm run test",
+    "api-install": "cd ml-api && npm install",
+    "front-install": "cd ml-front && npm install --legacy-peer-deps",
+    "install-dev": "concurrently \"npm run api-install\" \"npm run front-install\"",
+    "devinit": "concurrently \"npm run api-dev\" \"npm run front-dev\"",
+
+    "front-doc": "cd ml-front && npm run storybook"
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "2.0.6"
+  }
+}
