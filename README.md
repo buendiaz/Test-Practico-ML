@@ -5,7 +5,13 @@ Postulación de Maximiliano Díaz
 El único requisito es tener Nodejs instalado y ejecutar la siguiente secuencia de comandos según se requiera
 
 ```
-yarn run storybook
+cd ml-api
+npm install
+```
+
+```
+cd ml-front
+npm install
 ```
 
 
