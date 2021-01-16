@@ -1,9 +1,5 @@
 import { HTMLAttributes } from "react";
 
-interface searchQueryProps {
-  query: string,
-}
-
 interface authorProps {
   name: string,
   lastname: string,
@@ -15,13 +11,24 @@ interface priceProps {
   decimals: number,
 }
 
-interface itemsProps {
+export interface itemsProps {
   id: string,
   title: string,
   price: priceProps,
   picture: string,
   condition: string,
   free_shipping: boolean,
+}
+
+export interface itemDetailProps {
+  id: string,
+  title: string,
+  price: priceProps,
+  picture: string,
+  condition: string,
+  free_shipping: boolean,
+  sold_quantity: number,
+  description: string,
 }
 
 export interface searchProps {
@@ -47,3 +54,14 @@ export interface appInitProps {
 export interface inputProps extends HTMLAttributes<HTMLInputElement>  {}
 
 export interface buttonProps extends HTMLAttributes<HTMLButtonElement>  {}
+
+export interface fetchingProps {
+  method: string,
+  path: string,
+  extraPath?: string[],
+  data?: any,
+}
+
+export interface breadcrumbProps {
+  categories: string[],
+}

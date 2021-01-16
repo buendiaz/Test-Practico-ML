@@ -1,0 +1,31 @@
+// File: _breadcrumb.scss
+
+.breadcrumb {
+  margin-top: 20px;
+  font-size: .8rem;
+  color: $secondary_text;
+  display: flex;
+  flex-wrap: wrap;
+
+  .itemBreadcrumb {
+    padding-bottom: 10px;
+
+    a {
+      text-decoration: none;
+      color: $secondary_text;
+
+      &:hover {
+        color: $primary_text;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .separator {
+    padding: 0 4px;
+
+    svg {
+      fill: $secondary_text;
+    }
+  }
+}

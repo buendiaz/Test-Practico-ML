@@ -4,14 +4,13 @@ body, html {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	//font-family: Arial, Helvetica, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 
 	#root {
 		height: 100%;
 
 		.all_container {
 			min-height: 100%;
-			//display: flex;
 		}
 	}
 }

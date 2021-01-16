@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history'
-
-import './index.css';
 import Router from './_router/router';
 
 import AppContainer from './App';

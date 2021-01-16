@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from 'react';
 import Input from '../forms/input';
 import Button from '../forms/button';
 import { useHistory } from 'react-router-dom';
+import { normalizeUrl } from '../../../_helpers/formatting';
 
 const SearchBar = () => {
   const history = useHistory();
@@ -11,7 +12,7 @@ const SearchBar = () => {
     e.preventDefault();
 
     if(searchValue !== ''){
-      history.push(`/items?search=${searchValue}`);
+      history.push(`/items?search=${normalizeUrl(searchValue)}`);
     } else {
       history.push(`/`);
     }

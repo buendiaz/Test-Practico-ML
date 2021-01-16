@@ -1,0 +1,32 @@
+// File: _loader.scss
+
+.loader {
+  height: 4px;
+  background: $secondary_blue;
+  position: relative;
+  overflow: hidden;
+
+  .loader_element {
+    width: 30%;
+    height: 4px;
+    background: $primary_blue;
+    position: absolute;
+    animation-name: MOVE-BG;
+    animation-duration: .75s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: MOVE-BG;
+    -webkit-animation-duration: .75s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
+}
+
+@keyframes MOVE-BG {
+  from {
+    transform: translateX(-100%);
+  }
+  to { 
+    transform: translateX(350%);
+  }
+}

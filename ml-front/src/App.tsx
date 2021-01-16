@@ -1,28 +1,10 @@
-//import React, { useEffect, useState } from 'react'
 import { Helmet } from "react-helmet";
 import './styles/main.scss';
 import { appInitProps } from './type';
 import Search from './components/common/header';
 
 
-const AppContainer = (props:appInitProps) => {
-  /*const [todos, setTodos] = useState<searchProps[]>([])
-
-  console.log('***');
-
-  /*
-  useEffect(() => {
-    fetchSearch()
-  }, [])
-
-  const fetchSearch = (): void => {
-    getSearch()
-    .then(({ data: { todos } }: searchProps[] | any) => setTodos(todos))
-    .catch((err: Error) => console.log(err))
-  }
-  */
-
-  
+const AppContainer = (props:appInitProps) => {  
 
   return (
     <div className="content">

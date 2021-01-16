@@ -1,1 +1,76 @@
 // File: _item.scss
+
+.itemContent {
+  padding: 15px 20px;
+
+  .itemImage {
+    text-align: center;
+    
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .itemDetail {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: $primary_text;
+
+    .itemInfo {
+      font-size: .8rem;
+      font-weight: 500;
+      color: $primary_text;
+
+      span {
+        text-transform: capitalize;
+      }
+    }
+
+    .itemPrice {
+      padding-top: 30px;
+      font-size: 2.5rem;
+      display: flex;
+      align-items: top;
+
+      small {
+        margin: -5px 0 0 3px;
+        font-size: 1rem;
+      }
+    }
+
+    h1 {
+      font-weight: 600;
+    }
+
+    .itemBuy {
+      width: 100%;;
+      background: $primary_blue;
+      margin-top: 50px;
+      padding: 10px 20px;
+      bordeR: none;
+      display: block;
+      font-size: 1.1rem;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      @include border-radius( 5px );
+      cursor: pointer;
+    }
+  }
+
+  .itemHeaders {
+    padding: 40px 0 25px 0;
+    font-size: 1.5rem;
+    color: $secondary_text;
+    text-align: left;
+  }
+
+  .itemDescription {
+    font-size: 1rem;
+    color: $alternative_text;
+    text-align: left;
+    line-height: 1.5rem;
+  }
+
+
+}
