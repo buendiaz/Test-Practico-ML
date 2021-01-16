@@ -15,7 +15,9 @@
 		"noImplicitThis": true,
 		"noImplicitAny": true,
 		"strictNullChecks": true,
-		"declaration": true
+		"declaration": true,
+		"typeRoots": ["overrides", "node_modules/@types"],
+		"skipLibCheck": true
 	},
 	"include": ["src/**/*", "../src/assets/index.d.ts"],
 	"exclude": [
