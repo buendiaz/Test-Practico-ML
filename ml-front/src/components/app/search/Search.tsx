@@ -7,6 +7,7 @@ import useRequestData from '../../../_services/request';
 import Loader from '../../common/loader';
 import { normalizeUrl, toCurrency } from '../../../_helpers/formatting';
 import Breadcrumb from '../../common/breadcrumb';
+import SearchItem from "./SearchItem";
 
 const SearchList = (props:searchProps) => {
   const { querySearch } = useRequestData();
@@ -54,30 +55,7 @@ const SearchList = (props:searchProps) => {
                       { products && products.length !== 0 ?
                           products.map((item:itemsProps, index:number) => {
                             return (
-                              <div key={index} className="searchResults">
-                                <div className="itemSearchResult row">
-                                  <div className="col-xs-12 col-sm-3 col-md-2">
-                                    <Link to={ `items/${item.id}`} className="itemSearchResultImage">
-                                      <img src={item.picture} alt={item.title} title="Ver producto" />
-                                    </Link>
-                                  </div>
-                                  <div className="col-xs-12 col-sm-9 col-md-10">
-                                    <div className="itemSearchResultPrice">
-                                      <Link to={ `items/${item.id}`}>
-                                      $ {toCurrency({
-                                        amount: item.price.amount,
-                                        currency: item.price.currency
-                                      })}
-                                      </Link>
-                                    </div>
-                                    <div className="itemSearchResultTitle">
-                                      <Link to={ `items/${item.id}`}>
-                                        {item.title}
-                                      </Link>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                              <SearchItem key={index} {...item} />
                             )
                           })
                         :
@@ -95,4 +73,4 @@ const SearchList = (props:searchProps) => {
   )
 }
 
-export default SearchList
+export default SearchList;

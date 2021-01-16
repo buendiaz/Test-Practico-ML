@@ -7,6 +7,7 @@ import useFetch from '../../../_services/fetch';
 import Breadcrumb from '../../common/breadcrumb';
 import Button from '../../common/forms/button';
 import Loader from '../../common/loader';
+import ItemDetail from './ItemDetail';
 
 interface parameterProps {
   id: string,
@@ -65,34 +66,7 @@ const Item = () => {
               <Breadcrumb categories={categories} />
               <div className="resultBox">
                 {  product ?
-                    <div className="itemContent">
-                      <div className="row">
-                        <div className="itemImage col-xs-12 col-md-8">
-                          <img src={product.picture} alt={product.title} />
-                          <h2 className="itemHeaders">Descripción del producto</h2>
-                          <div className="itemDescription">
-                            {product.description}
-                          </div>
-                        </div>
-                        <div className="itemDetail col-xs-12 col-md-4">
-                          <div className="itemInfo">
-                            <span>{product.condition}</span> - {product.sold_quantity} vendidos
-                          </div>
-                          <h1>
-                            {product.title}
-                          </h1>
-                          <div className="itemPrice">
-                            $ {toCurrency({
-                              amount: product.price.amount,
-                            })}
-                            <small>{getDecimals(product.price.amount)}</small>
-                          </div>
-                          <Button className="itemBuy">
-                            Comprar
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
+                    <ItemDetail {...product} />
                   :
                     <div className="noResults">Lo sentimos, no hay productos que coincidan con tu búsqueda</div>
                 }

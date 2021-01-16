@@ -5,7 +5,7 @@ interface authorProps {
   lastname: string,
 }
 
-interface priceProps {
+export interface priceProps {
   currency: string,
   amount: number,
   decimals: number,
