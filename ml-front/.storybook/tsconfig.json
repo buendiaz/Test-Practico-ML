@@ -17,7 +17,7 @@
 		"strictNullChecks": true,
 		"declaration": true
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "../src/assets/index.d.ts"],
 	"exclude": [
 		"node_modules",
 		"build",

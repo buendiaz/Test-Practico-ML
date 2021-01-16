@@ -47,5 +47,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/react": "^6.1.14",
+    "@types/storybook__react": "^5.2.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0"
   }
 }
