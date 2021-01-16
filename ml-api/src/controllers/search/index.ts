@@ -7,15 +7,19 @@ const getSearch = async (req: Request, res: Response, next:NextFunction): Promis
   try{
     axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${req.query.q}`)
             .then(response => {
+
               const MLResponse = response.data;
 
               let categories:string[] = [];
-              categories = MLResponse.available_filters
-                              .filter((result:any) => result.id === 'category' ).shift()
+              
+              let categoryTemp = MLResponse.available_filters.filter((result:any) => result.id === 'category' );
+              if( categoryTemp.length !== 0 ){
+                categories = categoryTemp.shift()
                               .values.sort((a:any, b:any) => a.results > b.results ? -1 : 1)
                               .map((item:any) => {
-                return item.name
-              })
+                                return item.name
+                              })
+              }
 
               const searchValues:searchProps = {
                 author: {
